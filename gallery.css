@@ -1,0 +1,107 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: #0b0f14; color: #fff;
+  font: 14px/1.45 'Segoe UI', Arial, sans-serif;
+}
+header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 12px 18px; background: #0e141b; border-bottom: 1px solid #1c2733;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; }
+.brand .dot {
+  width: 26px; height: 26px; border-radius: 7px;
+  background: linear-gradient(135deg, #00aff0, #0077c8);
+  display: flex; align-items: center; justify-content: center; font-weight: 800;
+}
+
+.filters { display: flex; gap: 8px; }
+.tab {
+  cursor: pointer; border: 1px solid #26313d; background: #141b23; color: #9fb3c8;
+  border-radius: 999px; padding: 7px 14px; font: 600 13px 'Segoe UI', Arial;
+}
+.tab:hover { border-color: #3a4757; color: #fff; }
+.tab.active { background: #00aff0; border-color: #00aff0; color: #fff; }
+.tab .n {
+  display: inline-block; min-width: 18px; margin-left: 4px; padding: 0 5px;
+  border-radius: 999px; background: rgba(0,0,0,.25); font-size: 11px; text-align: center;
+}
+
+.actions { display: flex; gap: 8px; margin-left: auto; }
+.actions button {
+  cursor: pointer; border: 0; border-radius: 8px; padding: 9px 14px;
+  font: 600 13px 'Segoe UI', Arial; color: #fff;
+}
+.ghost { background: #26313d; } .ghost:hover { background: #33404e; }
+.primary { background: #00aff0; } .primary:hover { background: #13bdff; }
+.primary:disabled { background: #1c2733; color: #6b7c8e; cursor: not-allowed; }
+.alt { background: #5a2bd6; } .alt:hover { background: #6b3ae6; }
+
+.auto-status { padding: 4px 18px 0; font-size: 12px; color: #b9a7ff; min-height: 16px; }
+
+#howto {
+  margin: 14px 18px 4px; padding: 14px 16px;
+  background: #0e141b; border: 1px solid #1c2733; border-radius: 12px;
+}
+.howto-head { display: flex; align-items: center; justify-content: space-between; }
+.howto-title { font-weight: 700; font-size: 15px; }
+#howto ol { margin: 12px 0 0; padding-left: 22px; }
+#howto li { margin: 7px 0; color: #cdd8e3; }
+#howto b { color: #fff; }
+#howto code {
+  background: #141b23; border: 1px solid #26313d; border-radius: 5px;
+  padding: 1px 6px; font-size: 12px; color: #9fdcff;
+}
+.link {
+  cursor: pointer; border: 0; background: transparent; color: #00aff0;
+  font: 600 13px 'Segoe UI', Arial; padding: 0; margin-left: 6px;
+}
+.link:hover { color: #4cc6ff; text-decoration: underline; }
+#howto.collapsed ol { display: none; }
+
+.status { padding: 8px 18px; font-size: 12px; color: #9fb3c8; min-height: 18px; }
+
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px; padding: 0 18px 24px;
+}
+.card {
+  position: relative; aspect-ratio: 1/1; border-radius: 10px; overflow: hidden;
+  background: #141b23; border: 2px solid transparent; cursor: pointer;
+}
+.card img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  background: #141b23;
+}
+.card .ph {
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  color: #4a5a6b; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+}
+.card.sel { border-color: #00aff0; }
+.card .check {
+  position: absolute; top: 8px; left: 8px; width: 22px; height: 22px; border-radius: 6px;
+  background: rgba(11,15,20,.65); border: 2px solid #fff;
+  display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800;
+}
+.card.sel .check { background: #00aff0; border-color: #00aff0; }
+.card .badge {
+  position: absolute; bottom: 8px; right: 8px; padding: 2px 8px; border-radius: 999px;
+  background: rgba(11,15,20,.75); font-size: 11px; font-weight: 600;
+}
+.card .play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 44px; height: 44px; border-radius: 50%; background: rgba(0,0,0,.5);
+  display: flex; align-items: center; justify-content: center; pointer-events: none;
+}
+.card .play::after {
+  content: ""; border-left: 14px solid #fff; border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent; margin-left: 4px;
+}
+
+.card.audio { background: linear-gradient(135deg, #1a1340, #0e1430); }
+.card.audio .ph { color: #b9a7ff; font-size: 30px; }
+.card.pending { opacity: .5; }
+.card.pending .badge { background: #7a4b00; }
+
+.empty { padding: 60px 18px; text-align: center; color: #9fb3c8; }
+.empty .sub { font-size: 13px; max-width: 460px; margin: 8px auto 0; color: #6b7c8e; }

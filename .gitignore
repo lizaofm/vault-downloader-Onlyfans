@@ -1,0 +1,18 @@
+# Empaquetados / builds
+*.zip
+*.crx
+*.pem
+
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Node (por si en el futuro se añade tooling)
+node_modules/

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Lizaofm — Selección</title>
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="dot">L</span> Lizaofm</div>
+
+    <div class="filters" id="filters">
+      <button class="tab active" data-f="all">Todos <span class="n" id="n-all">0</span></button>
+      <button class="tab" data-f="photo">Fotos <span class="n" id="n-photo">0</span></button>
+      <button class="tab" data-f="video">Vídeos <span class="n" id="n-video">0</span></button>
+      <button class="tab" data-f="audio">Audios <span class="n" id="n-audio">0</span></button>
+    </div>
+
+    <div class="actions">
+      <button id="auto-btn" class="alt">▶ Capturar vídeos (auto)</button>
+      <button id="selAll" class="ghost">Seleccionar visibles</button>
+      <button id="selNone" class="ghost">Ninguno</button>
+      <button id="clearAll" class="ghost">Limpiar</button>
+      <button id="download" class="primary" disabled>Descargar (0)</button>
+    </div>
+  </header>
+
+  <div id="auto-status" class="auto-status"></div>
+
+  <section id="howto">
+    <div class="howto-head">
+      <span class="howto-title">📥 Cómo descargar tu bóveda</span>
+      <button id="howto-toggle" class="ghost">Ocultar</button>
+    </div>
+    <ol id="howto-steps">
+      <li>Abre OnlyFans y entra en tu <b>Bóveda</b> (Vault). <button id="open-of" class="link">Abrir OnlyFans ↗</button></li>
+      <li><b>Desplázate hasta el final</b> de la bóveda para que se cargue todo el contenido (fotos y audios se capturan al pasar).</li>
+      <li>Para los <b>vídeos</b>, con tu bóveda abierta pulsa el botón <b>“▶ Capturar vídeos (auto)”</b> de arriba — abrirá cada vídeo un instante en tu pestaña de OnlyFans para capturarlo.</li>
+      <li>Vuelve aquí, <b>filtra</b> (Todos / Fotos / Vídeos / Audios), <b>marca</b> lo que quieras y pulsa <b>Descargar</b>. Los archivos se guardan en tu carpeta <code>Descargas</code>.</li>
+    </ol>
+  </section>
+
+  <div id="status" class="status"></div>
+
+  <main id="grid" class="grid"></main>
+
+  <div id="empty" class="empty">
+    <p>Todavía no hay nada capturado.</p>
+    <p class="sub">Abre tu <b>bóveda</b> en OnlyFans y desplázate hasta el final para cargar todos los elementos. Aparecerán aquí automáticamente.</p>
+  </div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>

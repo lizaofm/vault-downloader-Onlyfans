@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Lizaofm",
+  "version": "1.0.0",
+  "description": "Respalda y descarga el contenido de tu propia bóveda de OnlyFans.",
+  "permissions": ["downloads", "storage", "webRequest"],
+  "host_permissions": [
+    "https://onlyfans.com/*",
+    "https://*.onlyfans.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Lizaofm — abrir galería",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://onlyfans.com/*"],
+      "js": ["interceptor.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://onlyfans.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "world": "ISOLATED"
+    }
+  ]
+}
